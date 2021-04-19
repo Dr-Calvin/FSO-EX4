@@ -1,13 +1,24 @@
-GET http://localhost:3003/api/blogs
+GET http://localhost:3003/api/users
 ###
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-  "title": "Stewart little",
-  "author": "Harry Houdini",
-  "url": "HarryH.com",
-  "likes": 100
+  "title": "React patterns",
+  "author": "Tommy Hill",
+  "url": "https://reactpatterns.com/",
+  "likes": 7
 }
+
+
 ###
-DELETE http://localhost:3003/api/blogs/607aeb3d320003315eb3e377
+DELETE http://localhost:3003/api/blogs/607c83f393e22b560e1e0001
+
+###
+PUT http://localhost:3003/api/blogs/5a422b891b54a676234d17fa
+Content-Type: application/json
+
+{
+  "likes": 12
+}
+ 
