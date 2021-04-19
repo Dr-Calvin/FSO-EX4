@@ -1,0 +1,23 @@
+post http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "tim8",
+  "password": "home"
+}
+###
+DELETE http://localhost:3003/api/blogs/607dbae39ee74b4d71f138ac HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg1ODE3OSwiZXhwIjoxNjE4ODYxNzc5fQ.NVQjAjiA7FeOfVI0BrQx_dtI5QUAJf_CxBfgWcGYgMU
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg1ODE3OSwiZXhwIjoxNjE4ODYxNzc5fQ.NVQjAjiA7FeOfVI0BrQx_dtI5QUAJf_CxBfgWcGYgMU
+
+{
+  "title": "React patterns 5000",
+  "author": "Tommy Hill",
+  "url": "https://reactpatterns.com/",
+  "likes": 7
+}
+###
+GET http://localhost:3003/api/blogs
