@@ -1,4 +1,5 @@
 const Blog = require('../models/blog')
+// const supertest = require('supertest')
 
 const initialBlogs = [
   {
@@ -71,8 +72,22 @@ const notesInDb = async () => {
   return blogs.map((blog) => blog.toJSON())
 }
 
+// const hook = (URL, method = 'post') => (args) =>
+//   supertest(URL)
+//     [method](args)
+//     .set('Authorization', `Basic ${process.env.SECRET}`)
+
+// const request = {
+//   post: hook('post'),
+//   get: hook('get'),
+
+//   put: hook('put'),
+//   delete: hook('delete'),
+// }
+
 module.exports = {
   initialBlogs,
   nonExistingId,
   notesInDb,
+  // request,
 }

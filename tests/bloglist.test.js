@@ -21,7 +21,7 @@ test('blogs are returned as json', async () => {
     .expect('Content-Type', /application\/json/)
 })
 
-test('there is a new flavor idea', async () => {
+test('blogs have id attached in response', async () => {
   const response = await api.get('/api/blogs')
   const contents = response.body.map((el) => el.id)
   console.log(contents)

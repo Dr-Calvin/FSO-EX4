@@ -2,22 +2,25 @@ post http://localhost:3003/api/login
 Content-Type: application/json
 
 {
-  "username": "tim8",
-  "password": "home"
+  "username": "test",
+  "password": "tester"
 }
 ###
-DELETE http://localhost:3003/api/blogs/607dbae39ee74b4d71f138ac HTTP/1.1
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg1ODE3OSwiZXhwIjoxNjE4ODYxNzc5fQ.NVQjAjiA7FeOfVI0BrQx_dtI5QUAJf_CxBfgWcGYgMU
+DELETE http://localhost:3003/api/blogs/607ddc370e72eb1d1a0c1df5 HTTP/1.1
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg3MDc3MSwiZXhwIjoxNjE4ODc0MzcxfQ.x6og1sR-_MCz2rCbbSenI_Pjbz7IXAj-bP_D6Hx3sMg
 ###
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg1ODE3OSwiZXhwIjoxNjE4ODYxNzc5fQ.NVQjAjiA7FeOfVI0BrQx_dtI5QUAJf_CxBfgWcGYgMU
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg2MjAwOSwiZXhwIjoxNjE4ODY1NjA5fQ.q6VL1hawHz8Fb8xuntpVjosl_aHCEbpK0RXSV_ijHIs
 
 {
-  "title": "React patterns 5000",
+  "title": "React patterns 3000",
   "author": "Tommy Hill",
   "url": "https://reactpatterns.com/",
   "likes": 7
 }
 ###
 GET http://localhost:3003/api/blogs
+
+###
+post 3000 = 607dde2058867b295e59953b auth = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg1ODE3OSwiZXhwIjoxNjE4ODYxNzc5fQ.NVQjAjiA7FeOfVI0BrQx_dtI5QUAJf_CxBfgWcGYgMU
