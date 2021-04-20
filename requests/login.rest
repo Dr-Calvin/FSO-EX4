@@ -7,17 +7,17 @@ Content-Type: application/json
 }
 ###
 DELETE http://localhost:3003/api/blogs/607ddc370e72eb1d1a0c1df5 HTTP/1.1
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg3MDc3MSwiZXhwIjoxNjE4ODc0MzcxfQ.x6og1sR-_MCz2rCbbSenI_Pjbz7IXAj-bP_D6Hx3sMg
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjYwN2UxMjk4ODg3MTdlY2E2MWI1NDY4MSIsImlhdCI6MTYxODg3ODQ1OSwiZXhwIjoxNjE4ODgyMDU5fQ.-rQH5OudH0ZkGq35Ds1na8kipH_fcsSAJquccSVOezI
 ###
-POST http://localhost:3003/api/blogs
+PUT http://localhost:3003/api/blogs/607e23ffccb78140603bf230
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpbTgiLCJpZCI6IjYwN2RiMTE3ZGFkYzNjMTFhZmVmMDVlNSIsImlhdCI6MTYxODg2MjAwOSwiZXhwIjoxNjE4ODY1NjA5fQ.q6VL1hawHz8Fb8xuntpVjosl_aHCEbpK0RXSV_ijHIs
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjYwN2UxMjk4ODg3MTdlY2E2MWI1NDY4MSIsImlhdCI6MTYxODg3ODQ1OSwiZXhwIjoxNjE4ODgyMDU5fQ.-rQH5OudH0ZkGq35Ds1na8kipH_fcsSAJquccSVOezI
 
 {
   "title": "React patterns 3000",
   "author": "Tommy Hill",
   "url": "https://reactpatterns.com/",
-  "likes": 7
+  "likes": 18
 }
 ###
 GET http://localhost:3003/api/blogs

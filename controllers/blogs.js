@@ -26,9 +26,8 @@ blogRouter.post('/', async (request, response) => {
     return response.status(401).json({ error: 'token missing or invalid' })
   }
 
-  const user = await User.findById(request.user)
-  console.log(user)
-
+  // console.log(request.user.id)
+  const user = await User.findById(request.user.id)
   const blog = new Blog({
     title: body.title,
     author: body.author,
@@ -40,7 +39,7 @@ blogRouter.post('/', async (request, response) => {
   const savedBlog = await blog.save()
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
-  response.json(savedBlog)
+  response.status(201).json(savedBlog)
 })
 
 blogRouter.delete('/:id', async (request, response) => {
@@ -48,20 +47,28 @@ blogRouter.delete('/:id', async (request, response) => {
     return response.status(401).json({ error: 'token missing or invalid' })
   }
   const postAuthor = await Blog.findById(request.params.id)
-  console.log('token peron ' + request.user.id)
-  // console.log('author person ' + postAuthor.user)
-  // console.log(request.user.id == postAuthor.user)
+  // console.log('token peron ' + request.user.id)
   if (postAuthor === null)
     response.status(400).json({ error: 'Post does not exist' })
   const result =
     request.user.id == postAuthor.user
       ? await Blog.findByIdAndRemove(request.params.id)
       : response.status(401).json({ error: 'unauthorised user' })
-  response.status(201).send(result)
+  response.status(204).send(result)
 })
 
 blogRouter.put('/:id', async (request, response) => {
-  const result = await Blog.findByIdAndUpdate(request.params.id, request.body)
+  if (request.token === null) {
+    return response.status(401).json({ error: 'token missing or invalid' })
+  }
+
+  const postAuthor = await Blog.findById(request.params.id)
+  if (postAuthor === null)
+    response.status(400).json({ error: 'Post does not exist' })
+  const result =
+    request.user.id == postAuthor.user
+      ? await Blog.findByIdAndUpdate(request.params.id, request.body)
+      : response.status(401).json({ error: 'unauthorised user' })
   response.status(201).send(result)
 })
 
